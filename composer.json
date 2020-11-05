@@ -1,0 +1,7 @@
+{
+    "name": "mjerwin/jigsaw-og-image",
+    "type": "library",
+    "require": {
+        "spatie/browsershot": "^3.40"
+    }
+}
