@@ -22,7 +22,7 @@ class OgImageGenerator
     {
         $fs = new Filesystem();
 
-        $compiler = new BladeCompiler($fs, cwd() . '/cache');
+        $compiler = new BladeCompiler($fs, getcwd() . '/cache');
         $blade = $fs->get(__DIR__ . '/../_layouts/basic.blade.php');
         $html = $compiler->compileString($blade);
 

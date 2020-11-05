@@ -1,4 +1,15 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
+<html>
+<head>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
 <div style="width: 800;height:600px;">
-    <h1>Matthew Erwin</h1>
+    <div class="flex flex-col sm:flex-row justify-center">
+        <img src="https://www.matthewerwin.co.uk/assets/img/portrait_2020.jpg" class="rounded-full w-1/3  m-auto sm:m-0">
+        <div class="sm:ml-10 w-full sm:w-1/2 text-center sm:text-left">
+            <h1 class="text-4xl">Matthew Erwin</h1>
+        </div>
+    </div>
 </div>
+</body>
+</html>
