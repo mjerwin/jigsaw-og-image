@@ -3,5 +3,10 @@
     "type": "library",
     "require": {
         "spatie/browsershot": "^3.40"
+    },
+    "autoload": {
+        "psr-4": {
+            "MJErwin\\JigsawOgImage\\": "src"
+        }
     }
 }
