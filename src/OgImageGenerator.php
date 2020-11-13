@@ -53,12 +53,14 @@ class OgImageGenerator
         /** @var ViewRenderer $view */
         $view = $this->jigsaw->app[ViewRenderer::class];
 
-        $html = $view->render(__DIR__ . '/../_layouts/basic.blade.php', new Collection([
+        // @todo Allow to be overriden in config
+        // @todo Command to publish default template
+        $html = $view->render(__DIR__ . '/../_og/default.blade.php', new Collection([
             'page' => $this->item,
         ]));
 
         Browsershot::html($html)
-            ->windowSize(800, 600)
+            ->windowSize(800, 300)
             ->quality(100)
             ->save($filename);
     }

@@ -27,17 +27,18 @@ class GenerateOgImage
 
         $img_dir = $jigsaw->getDestinationPath() . '/assets/images/og';
 
-        $fs->makeDirectory(
-            $img_dir,
-            0755,
-            true
-        );
+        $fs->makeDirectory($img_dir, 0755, true);
 
         $fs->copyDirectory($jigsaw->getDestinationPath() . '/../og_cache', $img_dir);
 
         $fs->makeDirectory($jigsaw->getConfig()['view.compiled'], 0755, true);
 
         foreach ($jigsaw->getCollections() as $type => $collection) {
+
+            if ($type !== 'posts') {
+                continue;
+            }
+
             /** @var PageVariable $collection */
             foreach ($collection as $item_key => $item) {
                 /** @var CollectionItem $item */
