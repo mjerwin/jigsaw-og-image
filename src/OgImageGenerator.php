@@ -55,9 +55,11 @@ class OgImageGenerator
 
         // @todo Allow to be overriden in config
         // @todo Command to publish default template
-        $html = $view->render(__DIR__ . '/../_og/default.blade.php', new Collection([
+        $html = $view->render($this->jigsaw->getSourcePath() . '/_og/default.blade.php', new Collection([
             'page' => $this->item,
         ]));
+
+//        $this->jigsaw->getFilesystem()->put($this->jigsaw->getSourcePath().'/../test.html', $html);
 
         Browsershot::html($html)
             ->windowSize(800, 300)
