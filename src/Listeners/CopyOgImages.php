@@ -27,15 +27,15 @@ class CopyOgImages
         $fs->copyDirectory($img_dir, $jigsaw->getDestinationPath() . '/../og_cache');
 
         $jigsaw->setConfig('getOgTag', function (PageVariable $page) use ($jigsaw) {
-            $img_dir = $jigsaw->getDestinationPath() . '/assets/images/og';
-            $item_key = basename($page->getPath());
             $type = $page->_meta->collectionName;
-            $filename = sprintf('%s-%s.jpg', $type, $item_key);
-            $filepath = sprintf('%s/%s', $img_dir, $filename);
 
-            if (!$jigsaw->getFilesystem()->exists($filepath)) {
+            if ($type !== 'posts') {
                 return null;
             }
+
+            $item_key = basename($page->getPath());
+
+            $filename = sprintf('%s-%s.jpg', $type, $item_key);
 
             return vsprintf('<meta property="og:image" content="%s/assets/images/og/%s" />', [
                 $page->baseUrl,
