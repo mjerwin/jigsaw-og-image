@@ -62,7 +62,7 @@ class OgImageGenerator
 //        $this->jigsaw->getFilesystem()->put($this->jigsaw->getSourcePath().'/../test.html', $html);
 
         Browsershot::html($html)
-            ->windowSize(800, 300)
+            ->windowSize(700, 350)
             ->quality(100)
             ->save($filename);
     }

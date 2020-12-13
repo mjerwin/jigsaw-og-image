@@ -37,9 +37,11 @@ class CopyOgImages
 
             $filename = sprintf('%s-%s.jpg', $type, $item_key);
 
-            return vsprintf('<meta property="og:image" content="%s/assets/images/og/%s" />', [
-                $page->baseUrl,
-                $filename,
+            $url = sprintf('%s/assets/images/og/%s', $page->baseUrl, $filename);
+
+            return vsprintf('<meta property="og:image" content="%s" />
+                        <meta name="twitter:image" content="%s">', [
+                $url, $url,
             ]);
         });
     }
